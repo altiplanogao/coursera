@@ -21,11 +21,13 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+d3 = zeros(size(X,1), K);
 
+for i = 1:K
+  d3(:,i) = norm(X - centroids(i,:), 2, "rows");
+end
 
-
-
-
+[m, idx] = min(d3,[],2);
 
 % =============================================================
 

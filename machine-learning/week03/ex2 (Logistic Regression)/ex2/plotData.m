@@ -12,10 +12,16 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
+#pos = find(y==1); neg = find(y == 0);
+#plot(X(pos,1), X(pos,2), 'k+', 'LineWidth',2,'MarkerSize', 5);
+#plot(X(neg,1), X(neg,2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7');
 
 
 
-
+pos = find(y==1); neg = find(y == 0);
+POSS = X(pos, :); NEGS = X(neg, :);
+plot(POSS(:,1), POSS(:,2), 'k+', 'LineWidth',2,'MarkerSize', 5);
+plot(NEGS(:,1), NEGS(:,2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7');
 
 
 
